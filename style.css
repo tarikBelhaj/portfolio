@@ -66,13 +66,13 @@ section {
   justify-content: center;
   height: 90vh;
   text-align: center;
-  animation: gradientMove 8s ease infinite alternate;
   background: url("assets/bg-hero.jpg") center/cover no-repeat;
+  animation: zoomEffect 20s ease infinite alternate;
 }
 
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
+@keyframes zoomEffect {
+  0% { background-size: 100%; }
+  100% { background-size: 110%; }
 }
 
 .hero h1 {
