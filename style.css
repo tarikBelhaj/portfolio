@@ -2,8 +2,6 @@
 .workflows {
     position: relative;
     min-height: 100vh;
-    padding: 80px 10%;
-    background: #0f0f1a;
     overflow: hidden;
 }
 
@@ -318,11 +316,7 @@
 /* ================= WORKFLOWS RESPONSIVE ================= */
 
 /* Tablette - max-width: 768px */
-@media (max-width: 768px) {
-    .workflows {
-        padding: 60px 5%;
-    }
-    
+@media (max-width: 768px) {    
     .workflows h2 {
         font-size: 2rem;
     }
@@ -347,11 +341,7 @@
 }
 
 /* Mobile - max-width: 480px */
-@media (max-width: 480px) {
-    .workflows {
-        padding: 40px 5%;
-    }
-    
+@media (max-width: 480px) {    
     .workflows h2 {
         font-size: 1.8rem;
     }
@@ -419,11 +409,7 @@
 }
 
 /* Très petits écrans - max-width: 320px */
-@media (max-width: 320px) {
-    .workflows {
-        padding: 30px 3%;
-    }
-    
+@media (max-width: 320px) {    
     .workflows h2 {
         font-size: 1.5rem;
     }
