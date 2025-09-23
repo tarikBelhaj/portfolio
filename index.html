@@ -11,6 +11,10 @@
   <!-- ================= HEADER ================= -->
   <header class="header">
     <div class="logo">Synergy AI</div>
+    
+    <!-- Bouton hamburger pour mobile -->
+    <button class="menu-toggle" aria-label="Menu">☰</button>
+    
     <nav class="nav">
       <ul>
         <li><a href="#hero">Accueil</a></li>
@@ -29,7 +33,7 @@
   <section id="hero" class="hero">
     <div class="hero-content">
       <h1>
-        <span class="fr">Transformez votre entreprise avec l’IA, l’Automation et le Marketing Digital Stratégique</span><br>
+        <span class="fr">Transformez votre entreprise avec l'IA, l'Automation et le Marketing Digital Stratégique</span>
       </h1>
       <a href="#projects" class="cta">
         <span class="fr">Découvrir mes Projets</span>
@@ -46,20 +50,20 @@
         <p>Acquisition de trafic qualifié</p>
       </div>
       <div class="card">
-        <h3>Social Media & Contenu | Social Media & Content</h3>
-        <p>Engagement & notoriété de marque </p>
+        <h3>Social Media & Contenu</h3>
+        <p>Engagement & notoriété de marque</p>
       </div>
       <div class="card">
         <h3>Automation & Workflows</h3>
         <p>Optimisation des processus</p>
       </div>
       <div class="card">
-        <h3>Chatbots Marketing </h3>
+        <h3>Chatbots Marketing</h3>
         <p>Segmentation & nurturing</p>
       </div>
       <div class="card">
-        <h3>Analyse Prédictive IA | Predictive AI Analytics</h3>
-        <p>Décisions basées sur la data / Data-driven decisions</p>
+        <h3>Analyse Prédictive IA</h3>
+        <p>Décisions basées sur la data</p>
       </div>
     </div>
   </section>
@@ -70,9 +74,9 @@
     <div class="grid">
       <div class="card project">
         <img src="https://via.placeholder.com/400x250" alt="Project 1">
-        <h3>Projet </h3>
-        <p>Description bilingue du projet </p>
-        <a href="#" class="btn">Voir le Projet </a>
+        <h3>Projet 1</h3>
+        <p>Description bilingue du projet</p>
+        <a href="#" class="btn">Voir le Projet</a>
       </div>
       <div class="card project">
         <img src="https://via.placeholder.com/400x250" alt="Project 2">
@@ -109,7 +113,7 @@
         <p>« Excellent travail, Tarik a transformé notre stratégie digitale. »<br><em>– Client FR</em></p>
       </blockquote>
       <blockquote>
-        <p>“Outstanding work, Tarik reshaped our digital strategy.”<br><em>– Client EN</em></p>
+        <p>"Outstanding work, Tarik reshaped our digital strategy."<br><em>– Client EN</em></p>
       </blockquote>
     </div>
   </section>
@@ -121,5 +125,87 @@
     </div>
     <p>© 2025 Tarik. Tous droits réservés. | © 2025 Tarik. All rights reserved.</p>
   </footer>
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    // Attendre que le DOM soit chargé
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('.nav');
+      const body = document.body;
+      
+      // Menu mobile
+      if (menuToggle && nav) {
+        menuToggle.addEventListener('click', function() {
+          nav.classList.toggle('active');
+          menuToggle.classList.toggle('active');
+          body.classList.toggle('menu-open');
+        });
+        
+        // Fermer le menu quand on clique sur un lien
+        const navLinks = document.querySelectorAll('.nav a');
+        navLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            nav.classList.remove('active');
+            menuToggle.classList.remove('active');
+            body.classList.remove('menu-open');
+          });
+        });
+        
+        // Fermer le menu si on clique en dehors
+        document.addEventListener('click', function(e) {
+          if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+            nav.classList.remove('active');
+            menuToggle.classList.remove('active');
+            body.classList.remove('menu-open');
+          }
+        });
+      }
+      
+      // Scroll smooth pour les liens d'ancrage
+      const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
+      smoothScrollLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const targetPosition = targetElement.offsetTop - headerHeight;
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+      
+      // Animation au scroll (optionnel)
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+      
+      // Observer les sections pour l'animation
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(30px)';
+        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(section);
+      });
+    });
+  </script>
 </body>
 </html>
