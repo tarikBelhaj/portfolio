@@ -66,7 +66,7 @@ section {
   justify-content: center;
   height: 90vh;
   text-align: center;
-  background: url("assets/bg-hero.jpg") center/cover no-repeat;
+  background: url("assets/hero-2.jpg") center/cover no-repeat;
   animation: zoomEffect 20s ease infinite alternate;
 }
 
