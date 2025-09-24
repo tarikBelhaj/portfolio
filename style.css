@@ -549,35 +549,31 @@ a:hover {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 80%; /* moins large que 100% */
+    width: 80%; /* largeur du menu */
     max-width: 320px;
     height: 100vh;
-    background: rgba(22, 27, 38, 0.85);
+    background: rgba(22, 27, 38, 0.95); /* menu opaque pour texte net */
     border-left: 1px solid rgba(99, 102, 241, 0.3);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
     box-shadow: -10px 0 40px rgba(0, 0, 0, 0.3);
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     padding: 4rem 2rem;
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    z-index: 1001; /* AU-DESSUS de l’overlay */
+    z-index: 1001; /* au-dessus de l’overlay */
   }
 
   .nav.active {
     right: 0;
-    backdrop-filter: blur(25px) saturate(200%);
-    -webkit-backdrop-filter: blur(25px) saturate(200%);
   }
 
   /* Overlay derrière le menu */
   .nav::before {
     content: '';
     position: fixed;
-    inset: 0; /* top, right, bottom, left */
+    inset: 0; /* couvre tout l’écran */
     background: rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(4px); /* flou doux */
+    backdrop-filter: blur(6px); /* floute uniquement le fond */
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.4s ease, visibility 0.4s ease;
@@ -611,7 +607,6 @@ a:hover {
     border: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 0.5rem;
     transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-    backdrop-filter: blur(10px);
   }
 
   .nav a:hover {
@@ -630,7 +625,6 @@ a:hover {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 0.5rem;
     background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
     width: 100%;
     text-align: center;
     color: var(--text-muted);
