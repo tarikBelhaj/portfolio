@@ -583,12 +583,14 @@ a:hover {
     height: 100vh;
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(8px);
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     z-index: -1;
+    pointer-events: none;
   }
 
   .nav.active::before {
     left: 0;
+    pointer-events: auto;
   }
 
   .nav ul {
