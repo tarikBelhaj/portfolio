@@ -17,10 +17,12 @@
     
     <nav class="nav">
       <ul>
-        <li><a href="index.html">Accueil</a></li>
+        <li><a href="#hero">Accueil</a></li>
+        <li><a href="#services">Services</a></li>
         <li><a href="portfolio-marketing.html">Portfolio Marketing</a></li>
         <li><a href="portfolio-automation.html">Workflows IA</a></li>
         <li><a href="cv.html">CV</a></li>
+        <li><a href="#about">À propos</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -33,32 +35,99 @@
   <section id="hero" class="hero">
     <div class="hero-content">
       <h1>
-        <span class="fr">L'IA et le marketing digital au service de votre croissance</span>
+        Transformez votre entreprise avec l'IA, l'Automation et le Marketing Digital Stratégique
       </h1>
-      <p class="fr">
-        SEO, SEA, E-commerce & Workflows IA — des résultats mesurables pour vos campagnes et vos process.
-      </p>
       <div class="hero-cta">
-        <a href="portfolio-marketing.html" class="cta">Voir Portfolio Web Marketing</a>
+        <a href="portfolio-marketing.html" class="cta">Voir Portfolio Marketing</a>
         <a href="portfolio-automation.html" class="cta">Voir Workflows IA</a>
         <a href="cv.html" class="cta">Voir mon CV</a>
       </div>
-      <div class="hero-metrics">
-        <p>+45% de revenu (e-commerce)</p>
-        <p>-96% temps devis (Telegram)</p>
-        <p>+1 article/jour (SEO auto)</p>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES ================= -->
+  <section id="services" class="services">
+    <h2>Services</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Stratégie SEO/SEA</h3>
+        <p>Acquisition de trafic qualifié</p>
       </div>
+      <div class="card">
+        <h3>Social Media & Contenu</h3>
+        <p>Engagement & notoriété de marque</p>
+      </div>
+      <div class="card">
+        <h3>Automation & Workflows</h3>
+        <p>Optimisation des processus</p>
+      </div>
+      <div class="card">
+        <h3>Chatbots Marketing</h3>
+        <p>Segmentation & nurturing</p>
+      </div>
+      <div class="card">
+        <h3>Analyse Prédictive IA</h3>
+        <p>Décisions basées sur la data</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects" class="projects">
+    <h2>Projets | Projects</h2>
+    <div class="grid">
+      <div class="card project">
+        <img src="https://via.placeholder.com/400x250" alt="Project 1">
+        <h3>Projet Marketing</h3>
+        <p>Campagnes SEO/SEA avec résultats mesurables.</p>
+        <a href="portfolio-marketing.html" class="btn">Voir le Portfolio</a>
+      </div>
+      <div class="card project">
+        <img src="https://via.placeholder.com/400x250" alt="Project 2">
+        <h3>Workflows IA</h3>
+        <p>Automatisation des devis, contenu SEO et support client.</p>
+        <a href="portfolio-automation.html" class="btn">Voir les Workflows</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="about">
+    <h2>À propos</h2>
+    <div class="about-content">
+      <img src="https://via.placeholder.com/200" alt="Photo Tarik" class="profile-pic">
+      <div>
+        <p>
+          Je suis <strong>Tarik Belhaj</strong>, professionnel en marketing digital spécialisé en SEO/SEA, 
+          acquisition de trafic et automation IA.
+        </p>
+        <div class="skills">
+          <span>SEO</span><span>SEA</span><span>Google Ads</span><span>Acquisition</span>
+          <span>Social Media</span><span>IA</span><span>Automation</span><span>No-Code</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS ================= -->
+  <section id="testimonials" class="testimonials">
+    <h2>Témoignages</h2>
+    <div class="slider">
+      <blockquote>
+        <p>« Excellent travail, Tarik a transformé notre stratégie digitale. »<br><em>– Client FR</em></p>
+      </blockquote>
+      <blockquote>
+        <p>"Outstanding work, Tarik reshaped our digital strategy."<br><em>– Client EN</em></p>
+      </blockquote>
     </div>
   </section>
 
   <!-- ================= FOOTER ================= -->
   <footer class="footer" id="contact">
     <div class="socials">
-      <a href="https://linkedin.com">LinkedIn</a> | 
-      <a href="https://twitter.com">Twitter</a> | 
-      <a href="https://github.com/tarikbelhaj">GitHub</a>
+      <a href="https://linkedin.com">LinkedIn</a> | <a href="https://twitter.com">Twitter</a> | <a href="https://github.com/tarikbelhaj">GitHub</a>
     </div>
-    <p>© 2025 Tarik Belhaj. Tous droits réservés. | hébergé sur <a href="https://tarikbelhaj.github.io">tarikbelhaj.github.io</a></p>
+    <p>© 2025 Tarik Belhaj. Tous droits réservés.</p>
   </footer>
 
   <!-- ================= JAVASCRIPT ================= -->
@@ -73,6 +142,15 @@
           nav.classList.toggle('active');
           menuToggle.classList.toggle('active');
           body.classList.toggle('menu-open');
+        });
+        
+        const navLinks = document.querySelectorAll('.nav a');
+        navLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            nav.classList.remove('active');
+            menuToggle.classList.remove('active');
+            body.classList.remove('menu-open');
+          });
         });
       }
     });
