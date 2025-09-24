@@ -3,48 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accueil | Tarik Belhaj</title>
+  <title>Tarik Belhaj - Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="alternate" href="https://tarikbelhaj.github.io/index.html" hreflang="fr">
-  <link rel="alternate" href="https://tarikbelhaj.github.io/en/index.html" hreflang="en">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- ================= HEADER ================= -->
   <header class="header">
-    <div class="logo">Synergy AI</div>
+    <div class="logo">Tarik Belhaj</div>
+    
+    <!-- Bouton hamburger pour mobile -->
+    <button class="menu-toggle" aria-label="Menu">☰</button>
+    
     <nav class="nav">
       <ul>
-        <li><a href="/portfolio-marketing.html">Web Marketing</a></li>
-        <li><a href="/portfolio-automation.html">Automatisation IA</a></li>
-        <li><a href="/cv.html">CV</a></li>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="portfolio-marketing.html">Portfolio Marketing</a></li>
+        <li><a href="portfolio-automation.html">Workflows IA</a></li>
+        <li><a href="cv.html">CV</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     <div class="lang-switch">
-      <a href="/index.html">FR</a> | <a href="/en/index.html">EN</a>
+      <a href="index.html">FR</a> | <a href="en/index.html">EN</a>
     </div>
   </header>
 
-  <section class="hero">
+  <!-- ================= HERO ================= -->
+  <section id="hero" class="hero">
     <div class="hero-content">
-      <h1>J’automatise l’acquisition & les opérations avec l’IA et le marketing digital</h1>
-      <p class="hero-sub">SEO, SEA, E-commerce & Workflows IA — des résultats mesurables pour vos campagnes et vos process.</p>
-      <div class="dual-cta">
-        <a class="cta" href="/portfolio-marketing.html">Voir Portfolio Web Marketing</a>
-        <a class="cta" href="/portfolio-automation.html">Voir Workflows IA</a>
+      <h1>
+        <span class="fr">L'IA et le marketing digital au service de votre croissance</span>
+      </h1>
+      <p class="fr">
+        SEO, SEA, E-commerce & Workflows IA — des résultats mesurables pour vos campagnes et vos process.
+      </p>
+      <div class="hero-cta">
+        <a href="portfolio-marketing.html" class="cta">Voir Portfolio Web Marketing</a>
+        <a href="portfolio-automation.html" class="cta">Voir Workflows IA</a>
+        <a href="cv.html" class="cta">Voir mon CV</a>
       </div>
-      <div class="kpi-bar">
-        <div class="kpi">+45% de revenu (e-commerce)</div>
-        <div class="kpi">−96% temps devis (Telegram)</div>
-        <div class="kpi">+1 article/jour (SEO auto)</div>
+      <div class="hero-metrics">
+        <p>+45% de revenu (e-commerce)</p>
+        <p>-96% temps devis (Telegram)</p>
+        <p>+1 article/jour (SEO auto)</p>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="footer">
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer" id="contact">
     <div class="socials">
-      <a href="#">LinkedIn</a> | <a href="#">Twitter</a> | <a href="#">GitHub</a>
+      <a href="https://linkedin.com">LinkedIn</a> | 
+      <a href="https://twitter.com">Twitter</a> | 
+      <a href="https://github.com/tarikbelhaj">GitHub</a>
     </div>
-    <p>© 2025 Tarik. Tous droits réservés.</p>
-  </section>
+    <p>© 2025 Tarik Belhaj. Tous droits réservés. | hébergé sur <a href="https://tarikbelhaj.github.io">tarikbelhaj.github.io</a></p>
+  </footer>
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('.nav');
+      const body = document.body;
+      
+      if (menuToggle && nav) {
+        menuToggle.addEventListener('click', function() {
+          nav.classList.toggle('active');
+          menuToggle.classList.toggle('active');
+          body.classList.toggle('menu-open');
+        });
+      }
+    });
+  </script>
 </body>
 </html>
