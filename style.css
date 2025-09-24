@@ -62,15 +62,6 @@ a:hover {
   color: #7f5af0;
 }
 
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-}
-
 .lang-switch {
   font-size: 0.9rem;
   color: #cbd5e1;
@@ -78,13 +69,17 @@ a:hover {
 
 /* ================= HERO ================= */
 .hero {
-  height: 100vh;
+  height: 40vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   background: url("assets/bg-hero.jpg") center/cover no-repeat;
   padding: 0 20px;
+}
+
+.hero-small {
+  height: 40vh;
 }
 
 .hero h1 {
@@ -96,40 +91,25 @@ a:hover {
   -webkit-text-fill-color: transparent;
 }
 
-.cta {
-  display: inline-block;
-  padding: 15px 30px;
-  border-radius: 30px;
-  background: #7f5af0;
-  color: #fff;
-  font-weight: 600;
-  transition: background 0.3s ease, transform 0.3s ease;
+.hero p {
+  font-size: 1.1rem;
+  color: #cbd5e1;
 }
 
-.cta:hover {
-  background: #6b4dc7;
-  transform: translateY(-3px);
-}
-
-/* ================= SERVICES ================= */
+/* ================= CARDS ================= */
 .services {
-  padding: 100px 40px;
+  padding: 80px 40px;
   text-align: center;
-}
-
-.services h2 {
-  font-size: 2rem;
-  margin-bottom: 40px;
 }
 
 .services .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
 .card {
-  background: rgba(26, 26, 46, 0.8);
+  background: rgba(26, 26, 46, 0.85);
   border: 1px solid rgba(127, 90, 240, 0.3);
   padding: 30px;
   border-radius: 15px;
@@ -142,234 +122,79 @@ a:hover {
   box-shadow: 0 10px 30px rgba(127, 90, 240, 0.3);
 }
 
-/* ================= WORKFLOWS SECTION ================= */
-.workflows {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-}
-
-/* Particules animées en arrière-plan */
-.workflows::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-      radial-gradient(2px 2px at 20px 30px, rgba(127, 90, 240, 0.3), transparent),
-      radial-gradient(2px 2px at 40px 70px, rgba(127, 90, 240, 0.2), transparent),
-      radial-gradient(1px 1px at 90px 40px, rgba(127, 90, 240, 0.4), transparent),
-      radial-gradient(1px 1px at 130px 80px, rgba(127, 90, 240, 0.3), transparent),
-      radial-gradient(2px 2px at 160px 30px, rgba(127, 90, 240, 0.2), transparent);
-  background-repeat: repeat;
-  background-size: 200px 200px;
-  animation: particleFloat 20s linear infinite;
-  opacity: 0.6;
-}
-
-@keyframes particleFloat {
-  0% { transform: translate(0, 0); }
-  50% { transform: translate(-20px, -20px); }
-  100% { transform: translate(0, 0); }
-}
-
-.workflows h2 {
-  font-size: 3rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #7f5af0, #9370db, #ba55d3);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 20px;
-  text-shadow: 0 0 30px rgba(127, 90, 240, 0.5);
-  text-align: center;
-}
-
-.workflows-intro {
-  font-size: 1.2rem;
-  color: #cbd5e1;
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* Grille des cartes workflows */
-.workflows-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 30px;
-  margin-top: 60px;
-}
-
-/* Cartes workflows */
-.workflow-card {
-  background: rgba(26, 26, 46, 0.8);
-  border: 1px solid rgba(127, 90, 240, 0.3);
-  border-radius: 20px;
-  padding: 40px 30px;
-  position: relative;
-  transition: all 0.4s ease;
-  backdrop-filter: blur(10px);
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(127, 90, 240, 0.2);
-}
-
-.workflow-card:hover {
-  transform: translateY(-10px);
-  border-color: rgba(127, 90, 240, 0.8);
-  box-shadow: 
-      0 20px 40px rgba(127, 90, 240, 0.3),
-      0 0 60px rgba(127, 90, 240, 0.2);
-}
-
-.workflow-card.featured {
-  border: 1px solid rgba(127, 90, 240, 0.6);
-  background: rgba(26, 26, 46, 0.9);
-}
-
-/* Badge "Réalisé" */
-.workflow-badge {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: linear-gradient(135deg, #7f5af0, #9370db);
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 25px;
-  font-size: 12px;
-  font-weight: 700;
-  box-shadow: 0 4px 15px rgba(127, 90, 240, 0.4);
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.8; }
-}
-
-/* Icônes */
-.workflow-icon {
-  width: 80px;
-  height: 80px;
-  background: rgba(127, 90, 240, 0.1);
-  border: 1px solid rgba(127, 90, 240, 0.4);
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  margin-bottom: 25px;
-}
-
-/* Métriques */
-.workflow-metrics {
-  display: flex;
-  gap: 20px;
-  margin-bottom: 25px;
-}
-
-.metric {
-  text-align: center;
-  flex: 1;
-}
-
-.metric-value {
-  display: block;
-  font-size: 1.8rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #7f5af0, #9370db);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.metric-label {
-  font-size: 0.85rem;
-  color: #94a3b8;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-/* Technologies utilisées */
-.workflow-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 25px;
-}
-
-.workflow-tech span {
-  background: rgba(127, 90, 240, 0.1);
-  border: 1px solid rgba(127, 90, 240, 0.3);
+.card h3 {
+  margin-bottom: 15px;
   color: #7f5af0;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
 }
 
-/* Boutons */
-.workflow-btn {
-  display: inline-block;
-  background: #7f5af0;
-  color: #fff;
-  text-decoration: none;
-  padding: 12px 24px;
-  border-radius: 25px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
+/* ================= CASE STUDY ================= */
+.case-study {
+  padding: 100px 40px;
 }
 
-.workflow-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(127, 90, 240, 0.4);
-  background: #6b4dc7;
-}
-
-/* CTA */
-.workflows-cta {
-  text-align: center;
-  margin-top: 80px;
-  padding: 60px 40px;
-  background: rgba(26, 26, 46, 0.6);
-  border-radius: 25px;
-  border: 1px solid rgba(127, 90, 240, 0.2);
-}
-
-.workflows-cta h3 {
-  font-size: 2rem;
+.case-study h2 {
+  font-size: 2.5rem;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, #fff, #cbd5e1);
+  background: linear-gradient(135deg, #7f5af0, #ba55d3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-align: center;
 }
 
-.workflows-cta p {
-  color: #94a3b8;
+.case-study .intro {
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  text-align: center;
+  color: #cbd5e1;
   font-size: 1.1rem;
+}
+
+.case-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.case-card {
+  background: rgba(26, 26, 46, 0.9);
+  border: 1px solid rgba(127, 90, 240, 0.3);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+.case-card h3 {
+  margin-bottom: 20px;
+  color: #7f5af0;
+}
+
+.case-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.case-card ul li::before {
+  content: "✅ ";
+  color: #7f5af0;
+}
+
+.case-card.full {
+  grid-column: 1 / -1;
   margin-bottom: 30px;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.cta-button {
-  display: inline-block;
-  background: #7f5af0;
-  color: #fff;
-  text-decoration: none;
-  padding: 16px 32px;
-  border-radius: 30px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(127, 90, 240, 0.3);
+.case-card ol {
+  padding-left: 20px;
 }
 
-.cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(127, 90, 240, 0.5);
+.case-card .images img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  display: block;
 }
 
 /* ================= FOOTER ================= */
@@ -410,7 +235,7 @@ a:hover {
     display: flex;
   }
 
-  .menu-toggle {
-    display: block;
+  .case-grid {
+    grid-template-columns: 1fr;
   }
 }
