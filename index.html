@@ -7,11 +7,19 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <!-- HEADER -->
   <header class="header">
     <div class="logo">Tarik Belhaj</div>
-    <nav class="nav">
+    
+    <!-- Menu Hamburger -->
+    <div class="menu-toggle" id="menu-toggle">
+      <div class="hamburger"></div>
+      <div class="hamburger"></div>
+      <div class="hamburger"></div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="nav" id="nav-menu">
       <ul>
         <li><a href="index.html">Accueil</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
@@ -19,10 +27,10 @@
         <li><a href="cv.html">CV</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <div class="lang-switch">
+        <a href="#">FR</a> | <a href="#">EN</a>
+      </div>
     </nav>
-    <div class="lang-switch">
-      <a href="#">FR</a> | <a href="#">EN</a>
-    </div>
   </header>
 
   <!-- HERO -->
@@ -30,25 +38,22 @@
     <div class="hero-content">
       <h1>
         Boostez votre entreprise avec <br>
-        <span>l’IA, l’Automation</span> et le <span>Marketing Digital</span>
+        <span>l'IA, l'Automation</span> et le <span>Marketing Digital</span>
       </h1>
       <p>
         SEO, SEA, E-commerce & Workflows IA — des résultats mesurables, concrets et rapides 
         pour vos campagnes et vos process.
       </p>
-
       <div class="hero-cta">
         <a href="portfolio.html" class="cta">Voir Portfolio Marketing</a>
         <a href="workflows.html" class="cta">Voir Workflows IA</a>
         <a href="cv.html" class="cta">Voir mon CV</a>
       </div>
-
       <div class="hero-metrics">
         <p>+65% de revenu (E-commerce)</p>
         <p>-96% temps devis (Telegram)</p>
         <p>+1 article/jour SEO auto</p>
       </div>
-
       <!-- HERO IMAGE OPTIONNELLE -->
       <div class="hero-image">
         <img src="assets/hero-illustration.jpg" alt="Illustration marketing digital">
@@ -84,7 +89,7 @@
         <p>
           Je suis <strong>Tarik Belhaj</strong>, professionnel du marketing digital spécialisé en 
           <strong>SEO/SEA</strong>, acquisition de trafic et <strong>automation IA</strong>.  
-          Mon objectif : <em>transformer vos campagnes en véritables générateurs de chiffre d’affaires</em>.
+          Mon objectif : <em>transformer vos campagnes en véritables générateurs de chiffre d'affaires</em>.
         </p>
         <div class="skills">
           <span>SEO</span>
@@ -102,7 +107,7 @@
   <!-- CTA SECTION -->
   <section class="cta-section">
     <h2>Prêt à booster vos campagnes ?</h2>
-    <p>Contactez-moi et découvrez comment l’IA et le Marketing Digital peuvent transformer votre business.</p>
+    <p>Contactez-moi et découvrez comment l'IA et le Marketing Digital peuvent transformer votre business.</p>
     <a href="contact.html" class="cta">Me Contacter</a>
   </section>
 
@@ -116,5 +121,24 @@
     <p>© 2025 Tarik Belhaj — Tous droits réservés</p>
   </footer>
 
+  <!-- JavaScript pour le menu hamburger -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Fermer le menu quand on clique sur un lien
+    const navLinks = document.querySelectorAll('.nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>
