@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="alternate" href="https://tarikbelhaj.github.io/portfolio-marketing.html" hreflang="fr">
   <link rel="alternate" href="https://tarikbelhaj.github.io/en/portfolio-marketing.html" hreflang="en">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- ================= HEADER ================= -->
@@ -26,10 +27,15 @@
   </header>
 
   <!-- ================= HERO ================= -->
-  <section class="services">
-    <h1>Portfolio Web Marketing</h1>
-    <p>SEO, SEA, Social Media et campagnes locales : voici mes cas d’usage avec résultats concrets.</p>
+  <section class="hero hero-small">
+    <div class="hero-content">
+      <h1>Portfolio Web Marketing</h1>
+      <p>SEO, SEA, Social Media et campagnes locales : voici mes cas d’usage avec résultats concrets.</p>
+    </div>
+  </section>
 
+  <!-- ================= PORTFOLIO CARDS ================= -->
+  <section class="services">
     <div class="grid">
       <div class="card">
         <h3>SEO & SEA orienté ROI</h3>
@@ -47,16 +53,17 @@
   </section>
 
   <!-- ================= GOOGLE ADS CASE STUDY ================= -->
-  <section id="case-googleads" class="services">
+  <section id="case-googleads" class="case-study">
     <h2>Cas d’étude : Google Ads Plomberie à Bruxelles</h2>
-    <p>
+    <p class="intro">
       Exemple concret de résultats obtenus en peu de temps dans un secteur ultra compétitif : 
       la <strong>plomberie à Bruxelles</strong>. Malgré la concurrence, j’ai su positionner les annonces 
       efficacement grâce à une approche basée sur la <em>data</em> et la connaissance de l’avatar client.
     </p>
 
-    <div class="grid">
-      <div class="card">
+    <div class="case-grid">
+      <!-- Résultats -->
+      <div class="case-card">
         <h3>Résultats obtenus</h3>
         <ul>
           <li><strong>121 conversions</strong> en quelques semaines</li>
@@ -66,27 +73,32 @@
         </ul>
       </div>
 
-      <div class="card">
+      <!-- Exemples -->
+      <div class="case-card">
         <h3>Exemples réels</h3>
-        <img src="assets/googleads.png" alt="Résultats Google Ads Bruxelles">
-        <img src="assets/gads3.png" alt="CTR et conversions Google Ads">
-        <img src="assets/gads4.png" alt="Tableau annonces Google Ads">
+        <div class="images">
+          <img src="assets/googleads.png" alt="Résultats Google Ads Bruxelles">
+          <img src="assets/gads3.png" alt="CTR et conversions Google Ads">
+          <img src="assets/gads4.png" alt="Tableau annonces Google Ads">
+        </div>
       </div>
     </div>
 
-    <div class="card">
+    <!-- Stratégie -->
+    <div class="case-card full">
       <h3>Stratégie mise en place</h3>
-      <p>
-        1. Sélection rigoureuse des <strong>mots-clés rentables</strong>.<br>
-        2. Rédaction d’<strong>annonces percutantes</strong> (bénéfices + CTA).<br>
-        3. Mise en place d’<strong>extensions d’annonces</strong> (sitelinks, callout, appel).<br>
-        4. <strong>A/B Testing</strong> sur plusieurs variantes.<br>
-        5. Analyse des données pour affiner enchères & audiences.<br>
-        6. Création de <strong>landing pages optimisées</strong> : rassurance, garanties, CTA clair.
-      </p>
+      <ol>
+        <li>Sélection rigoureuse des <strong>mots-clés rentables</strong></li>
+        <li>Rédaction d’<strong>annonces percutantes</strong> (bénéfices + CTA)</li>
+        <li>Mise en place d’<strong>extensions d’annonces</strong> (sitelinks, callout, appel)</li>
+        <li><strong>A/B Testing</strong> sur plusieurs variantes</li>
+        <li>Analyse des données pour affiner enchères & audiences</li>
+        <li>Création de <strong>landing pages optimisées</strong> : rassurance, garanties, CTA clair</li>
+      </ol>
     </div>
 
-    <div class="card">
+    <!-- Conclusion -->
+    <div class="case-card full">
       <h3>Conclusion</h3>
       <p>
         Une annonce représente seulement <strong>50%</strong> du travail. L’autre moitié dépend de la 
