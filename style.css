@@ -1,440 +1,416 @@
+/* ================= RESET & BASE ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0f0f1a;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  color: #fff;
+}
+
+a {
+  color: #7f5af0;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ================= HEADER ================= */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(15, 15, 26, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #7f5af0;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav a {
+  color: #e2e8f0;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #7f5af0;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.lang-switch {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+/* ================= HERO ================= */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url("assets/bg-hero.jpg") center/cover no-repeat;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  max-width: 900px;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #7f5af0, #9370db, #ba55d3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cta {
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 30px;
+  background: #7f5af0;
+  color: #fff;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta:hover {
+  background: #6b4dc7;
+  transform: translateY(-3px);
+}
+
+/* ================= SERVICES ================= */
+.services {
+  padding: 100px 40px;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.services .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: rgba(26, 26, 46, 0.8);
+  border: 1px solid rgba(127, 90, 240, 0.3);
+  padding: 30px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  border-color: #7f5af0;
+  box-shadow: 0 10px 30px rgba(127, 90, 240, 0.3);
+}
+
 /* ================= WORKFLOWS SECTION ================= */
 .workflows {
-    position: relative;
-    min-height: 100vh;
-    overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 /* Particules animées en arrière-plan */
 .workflows::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(2px 2px at 20px 30px, rgba(127, 90, 240, 0.3), transparent),
-        radial-gradient(2px 2px at 40px 70px, rgba(127, 90, 240, 0.2), transparent),
-        radial-gradient(1px 1px at 90px 40px, rgba(127, 90, 240, 0.4), transparent),
-        radial-gradient(1px 1px at 130px 80px, rgba(127, 90, 240, 0.3), transparent),
-        radial-gradient(2px 2px at 160px 30px, rgba(127, 90, 240, 0.2), transparent);
-    background-repeat: repeat;
-    background-size: 200px 200px;
-    animation: particleFloat 20s linear infinite;
-    opacity: 0.6;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+      radial-gradient(2px 2px at 20px 30px, rgba(127, 90, 240, 0.3), transparent),
+      radial-gradient(2px 2px at 40px 70px, rgba(127, 90, 240, 0.2), transparent),
+      radial-gradient(1px 1px at 90px 40px, rgba(127, 90, 240, 0.4), transparent),
+      radial-gradient(1px 1px at 130px 80px, rgba(127, 90, 240, 0.3), transparent),
+      radial-gradient(2px 2px at 160px 30px, rgba(127, 90, 240, 0.2), transparent);
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: particleFloat 20s linear infinite;
+  opacity: 0.6;
 }
 
 @keyframes particleFloat {
-    0% { transform: translate(0, 0); }
-    50% { transform: translate(-20px, -20px); }
-    100% { transform: translate(0, 0); }
-}
-
-.workflows-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-}
-
-.workflows-header {
-    text-align: center;
-    margin-bottom: 60px;
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-20px, -20px); }
+  100% { transform: translate(0, 0); }
 }
 
 .workflows h2 {
-    font-size: 3rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, #7f5af0, #9370db, #ba55d3);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 20px;
-    text-shadow: 0 0 30px rgba(127, 90, 240, 0.5);
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #7f5af0, #9370db, #ba55d3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+  text-shadow: 0 0 30px rgba(127, 90, 240, 0.5);
+  text-align: center;
 }
 
 .workflows-intro {
-    font-size: 1.2rem;
-    color: #cbd5e1;
-    max-width: 600px;
-    margin: 0 auto;
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* Grille des cartes workflows */
 .workflows-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-    margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 60px;
 }
 
-/* Cartes workflows avec effet néon */
+/* Cartes workflows */
 .workflow-card {
-    background: rgba(26, 26, 46, 0.8);
-    border: 1px solid rgba(127, 90, 240, 0.3);
-    border-radius: 20px;
-    padding: 40px 30px;
-    position: relative;
-    transition: all 0.4s ease;
-    backdrop-filter: blur(10px);
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(127, 90, 240, 0.2);
-}
-
-.workflow-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(127, 90, 240, 0.1), transparent);
-    transition: left 0.5s ease;
-}
-
-.workflow-card:hover::before {
-    left: 100%;
+  background: rgba(26, 26, 46, 0.8);
+  border: 1px solid rgba(127, 90, 240, 0.3);
+  border-radius: 20px;
+  padding: 40px 30px;
+  position: relative;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(127, 90, 240, 0.2);
 }
 
 .workflow-card:hover {
-    transform: translateY(-10px);
-    border-color: rgba(127, 90, 240, 0.8);
-    box-shadow: 
-        0 20px 40px rgba(127, 90, 240, 0.3),
-        0 0 60px rgba(127, 90, 240, 0.2);
+  transform: translateY(-10px);
+  border-color: rgba(127, 90, 240, 0.8);
+  box-shadow: 
+      0 20px 40px rgba(127, 90, 240, 0.3),
+      0 0 60px rgba(127, 90, 240, 0.2);
 }
 
-/* Cartes "réalisées" avec effet spécial */
 .workflow-card.featured {
-    border: 1px solid rgba(127, 90, 240, 0.6);
-    background: rgba(26, 26, 46, 0.9);
-}
-
-.workflow-card.featured:hover {
-    border-color: rgba(127, 90, 240, 1);
-    box-shadow: 
-        0 20px 40px rgba(127, 90, 240, 0.4),
-        0 0 60px rgba(127, 90, 240, 0.3);
+  border: 1px solid rgba(127, 90, 240, 0.6);
+  background: rgba(26, 26, 46, 0.9);
 }
 
 /* Badge "Réalisé" */
 .workflow-badge {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: linear-gradient(135deg, #7f5af0, #9370db);
-    color: #fff;
-    padding: 8px 16px;
-    border-radius: 25px;
-    font-size: 12px;
-    font-weight: 700;
-    box-shadow: 0 4px 15px rgba(127, 90, 240, 0.4);
-    animation: pulse 2s infinite;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #7f5af0, #9370db);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(127, 90, 240, 0.4);
+  animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.8; }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
 }
 
-/* Icônes des workflows */
+/* Icônes */
 .workflow-icon {
-    width: 80px;
-    height: 80px;
-    background: rgba(127, 90, 240, 0.1);
-    border: 1px solid rgba(127, 90, 240, 0.4);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    margin-bottom: 25px;
-    position: relative;
-    overflow: hidden;
+  width: 80px;
+  height: 80px;
+  background: rgba(127, 90, 240, 0.1);
+  border: 1px solid rgba(127, 90, 240, 0.4);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 25px;
 }
 
-.workflow-icon::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(from 0deg, transparent, rgba(127, 90, 240, 0.2), transparent);
-    animation: rotate 4s linear infinite;
-}
-
-@keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.workflow-card h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 15px;
-}
-
-.workflow-description {
-    color: #cbd5e1;
-    font-size: 1rem;
-    margin-bottom: 25px;
-    line-height: 1.6;
-}
-
-/* Métriques avec effet glow */
+/* Métriques */
 .workflow-metrics {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 25px;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
 }
 
 .metric {
-    text-align: center;
-    flex: 1;
+  text-align: center;
+  flex: 1;
 }
 
 .metric-value {
-    display: block;
-    font-size: 1.8rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, #7f5af0, #9370db);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #7f5af0, #9370db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .metric-label {
-    font-size: 0.85rem;
-    color: #94a3b8;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 /* Technologies utilisées */
 .workflow-tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 25px;
 }
 
 .workflow-tech span {
-    background: rgba(127, 90, 240, 0.1);
-    border: 1px solid rgba(127, 90, 240, 0.3);
-    color: #7f5af0;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
+  background: rgba(127, 90, 240, 0.1);
+  border: 1px solid rgba(127, 90, 240, 0.3);
+  color: #7f5af0;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
-/* Boutons d'action */
+/* Boutons */
 .workflow-btn {
-    display: inline-block;
-    background: #7f5af0;
-    color: #fff;
-    text-decoration: none;
-    padding: 12px 24px;
-    border-radius: 25px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.workflow-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s ease;
-}
-
-.workflow-btn:hover::before {
-    left: 100%;
+  display: inline-block;
+  background: #7f5af0;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
 }
 
 .workflow-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(127, 90, 240, 0.4);
-    background: #6b4dc7;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(127, 90, 240, 0.4);
+  background: #6b4dc7;
 }
 
-/* CTA Section */
+/* CTA */
 .workflows-cta {
-    text-align: center;
-    margin-top: 80px;
-    padding: 60px 40px;
-    background: rgba(26, 26, 46, 0.6);
-    border-radius: 25px;
-    border: 1px solid rgba(127, 90, 240, 0.2);
+  text-align: center;
+  margin-top: 80px;
+  padding: 60px 40px;
+  background: rgba(26, 26, 46, 0.6);
+  border-radius: 25px;
+  border: 1px solid rgba(127, 90, 240, 0.2);
 }
 
 .workflows-cta h3 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    background: linear-gradient(135deg, #fff, #cbd5e1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #fff, #cbd5e1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .workflows-cta p {
-    color: #94a3b8;
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+  color: #94a3b8;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cta-button {
-    display: inline-block;
-    background: #7f5af0;
-    color: #fff;
-    text-decoration: none;
-    padding: 16px 32px;
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(127, 90, 240, 0.3);
+  display: inline-block;
+  background: #7f5af0;
+  color: #fff;
+  text-decoration: none;
+  padding: 16px 32px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(127, 90, 240, 0.3);
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(127, 90, 240, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(127, 90, 240, 0.5);
 }
 
-/* ================= WORKFLOWS RESPONSIVE ================= */
-
-/* Tablette - max-width: 768px */
-@media (max-width: 768px) {    
-    .workflows h2 {
-        font-size: 2rem;
-    }
-    
-    .workflows-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .workflow-card {
-        padding: 30px 20px;
-    }
-    
-    .workflow-metrics {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .workflows-cta {
-        padding: 40px 20px;
-    }
+/* ================= FOOTER ================= */
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(15, 15, 26, 0.95);
+  border-top: 1px solid rgba(127, 90, 240, 0.2);
+  margin-top: 60px;
 }
 
-/* Mobile - max-width: 480px */
-@media (max-width: 480px) {    
-    .workflows h2 {
-        font-size: 1.8rem;
-    }
-    
-    .workflows-intro {
-        font-size: 1rem;
-    }
-    
-    .workflow-card {
-        padding: 25px 15px;
-    }
-    
-    .workflow-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
-    }
-    
-    .workflow-card h3 {
-        font-size: 1.3rem;
-    }
-    
-    .workflow-description {
-        font-size: 0.9rem;
-    }
-    
-    .metric-value {
-        font-size: 1.5rem;
-    }
-    
-    .metric-label {
-        font-size: 0.75rem;
-    }
-    
-    .workflow-tech {
-        gap: 6px;
-    }
-    
-    .workflow-tech span {
-        padding: 4px 8px;
-        font-size: 0.7rem;
-    }
-    
-    .workflow-btn {
-        padding: 10px 20px;
-        font-size: 0.85rem;
-    }
-    
-    .workflows-cta {
-        padding: 30px 15px;
-    }
-    
-    .workflows-cta h3 {
-        font-size: 1.5rem;
-    }
-    
-    .workflows-cta p {
-        font-size: 1rem;
-    }
-    
-    .cta-button {
-        padding: 12px 24px;
-        font-size: 1rem;
-    }
+.footer a {
+  color: #7f5af0;
+  margin: 0 10px;
 }
 
-/* Très petits écrans - max-width: 320px */
-@media (max-width: 320px) {    
-    .workflows h2 {
-        font-size: 1.5rem;
-    }
-    
-    .workflow-card {
-        padding: 20px 12px;
-    }
-    
-    .workflows-grid {
-        gap: 15px;
-    }
+.footer p {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-top: 15px;
 }
 
-/* Améliorations pour les écrans tactiles */
-@media (hover: none) {
-    .workflow-card:hover {
-        transform: none;
-    }
-    
-    .workflow-btn:hover,
-    .cta-button:hover {
-        transform: none;
-    }
-    
-    .workflow-btn:active {
-        transform: scale(0.98);
-    }
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(15, 15, 26, 0.95);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .nav.active ul {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
 }
