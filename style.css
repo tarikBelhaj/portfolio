@@ -537,7 +537,9 @@ a:hover {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
-/* 
+
+
+
 /* ================= RESPONSIVE ================= */
 /* ================= MOBILE NAV REWORK ================= */
 @media (max-width: 768px) {
@@ -552,19 +554,41 @@ a:hover {
     width: 80%; /* moins large que 100% */
     max-width: 320px;
     height: 100vh;
-    background: var(--bg-card);
-    border-left: 1px solid var(--border);
-    backdrop-filter: blur(12px);
+    background: rgba(22, 27, 38, 0.85);
+    border-left: 1px solid rgba(99, 102, 241, 0.3);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.3);
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     padding: 4rem 2rem;
-    transition: all 0.35s ease;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     z-index: 1000;
   }
 
   .nav.active {
     right: 0;
+    backdrop-filter: blur(25px) saturate(200%);
+    -webkit-backdrop-filter: blur(25px) saturate(200%);
+  }
+
+  /* Overlay derrière le menu */
+  .nav::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: -1;
+  }
+
+  .nav.active::before {
+    left: 0;
   }
 
   .nav ul {
@@ -581,26 +605,36 @@ a:hover {
   .nav a {
     font-size: 1.1rem;
     font-weight: 500;
-    padding: 0.6rem 0.8rem;
+    padding: 0.8rem 1rem;
     display: block;
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     color: var(--text-primary);
-    transition: background 0.3s ease, padding-left 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 0.5rem;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    backdrop-filter: blur(10px);
   }
 
   .nav a:hover {
-    background: rgba(99, 102, 241, 0.15);
+    background: rgba(99, 102, 241, 0.2);
+    border-color: rgba(99, 102, 241, 0.4);
     color: var(--primary-light);
-    padding-left: 1.2rem;
+    transform: translateX(8px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.15);
   }
 
   .lang-switch {
     font-size: 0.9rem;
     margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border);
+    margin-left: 0;
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
     width: 100%;
-    text-align: left;
+    text-align: center;
     color: var(--text-muted);
   }
 
