@@ -3,18 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Tarik Belhaj </title>
+  <title>Tarik Belhaj - Portfolio</title>
   <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="alternate" href="https://tarikbelhaj.github.io/index.html" hreflang="fr">
   <link rel="alternate" href="https://tarikbelhaj.github.io/en/index.html" hreflang="en">
 </head>
 <body>
+  <!-- ================= HEADER ================= -->
   <header class="header">
-    <div class="logo">Synergy AI</div>
+    <div class="logo">Tarik Belhaj</div>
+    
+    <!-- Mobile menu toggle -->
+    <button class="menu-toggle" aria-label="Menu">☰</button>
+    
     <nav class="nav">
       <ul>
         <li><a href="/en/portfolio-marketing.html">Web Marketing</a></li>
-        <li><a href="/en/portfolio-automation.html">AI Automation</a></li>
+        <li><a href="/en/portfolio-automation.html">AI Workflows</a></li>
         <li><a href="/en/cv.html">Resume</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -24,27 +30,73 @@
     </div>
   </header>
 
-  <section class="hero">
+  <!-- ================= HERO ================= -->
+  <section id="hero" class="hero">
     <div class="hero-content">
-      <h1>I automate acquisition & operations with AI and digital marketing</h1>
-      <p class="hero-sub">SEO, SEA, E-commerce & AI workflows — measurable results for your campaigns and processes.</p>
+      <h1 class="gradient">AI & Digital Marketing powering your growth</h1>
+      <p class="hero-sub">
+        SEO, SEA, E-commerce & AI Workflows — measurable results for your campaigns and processes.
+      </p>
       <div class="dual-cta">
-        <a class="cta" href="/en/portfolio-marketing.html">View Web Marketing Portfolio</a>
-        <a class="cta" href="/en/portfolio-automation.html">View AI Workflows</a>
+        <a href="/en/portfolio-marketing.html" class="cta">View Web Marketing Portfolio</a>
+        <a href="/en/portfolio-automation.html" class="cta">View AI Workflows</a>
+        <a href="/en/cv.html" class="cta">View Resume</a>
       </div>
       <div class="kpi-bar">
-        <div class="kpi">+45% revenue (e-commerce)</div>
-        <div class="kpi">−96% quote time (Telegram)</div>
-        <div class="kpi">+1 article/day (Auto SEO)</div>
+        <span>+45% revenue (e-commerce)</span>
+        <span>−96% time on quotes (Telegram)</span>
+        <span>+1 article/day (Auto SEO)</span>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="footer">
-    <div class="socials">
-      <a href="#">LinkedIn</a> | <a href="#">Twitter</a> | <a href="#">GitHub</a>
+  <!-- ================= SERVICES ================= -->
+  <section id="services" class="services">
+    <h2>Two universes, one goal: measurable ROI</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Web Marketing Portfolio</h3>
+        <p>SEO/SEA, Social Media, local campaigns, tracking & CRO.</p>
+        <a class="workflow-btn" href="/en/portfolio-marketing.html">Discover</a>
+      </div>
+      <div class="card">
+        <h3>AI Automation Portfolio</h3>
+        <p>Workflows with OpenAI & Make.com, Telegram/Shopify/Klaviyo, scraping.</p>
+        <a class="workflow-btn" href="/en/portfolio-automation.html">Discover</a>
+      </div>
+      <div class="card">
+        <h3>Resume & Background</h3>
+        <p>Skills, experiences, and quantified case studies.</p>
+        <a class="workflow-btn" href="/en/cv.html">View Resume</a>
+      </div>
     </div>
-    <p>© 2025 Tarik. All rights reserved.</p>
   </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer" id="contact">
+    <div class="socials">
+      <a href="https://linkedin.com">LinkedIn</a> | 
+      <a href="https://twitter.com">Twitter</a> | 
+      <a href="https://github.com/tarikbelhaj">GitHub</a>
+    </div>
+    <p>© 2025 Tarik Belhaj. All rights reserved. | hosted on <a href="https://tarikbelhaj.github.io">tarikbelhaj.github.io</a></p>
+  </footer>
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('.nav');
+      const body = document.body;
+      
+      if (menuToggle && nav) {
+        menuToggle.addEventListener('click', function() {
+          nav.classList.toggle('active');
+          menuToggle.classList.toggle('active');
+          body.classList.toggle('menu-open');
+        });
+      }
+    });
+  </script>
 </body>
 </html>
