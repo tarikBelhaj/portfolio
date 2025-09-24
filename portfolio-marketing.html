@@ -150,3 +150,31 @@
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
     };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, observerOptions);
+
+    // Observer tous les éléments à animer
+    document.addEventListener('DOMContentLoaded', () => {
+      const elementsToAnimate = document.querySelectorAll('.card, .case-card');
+      elementsToAnimate.forEach(el => observer.observe(el));
+    });
+
+    // Header scroll effect
+    let lastScrollY = window.scrollY;
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 100) {
+        header.style.background = 'rgba(10, 14, 19, 0.95)';
+      } else {
+        header.style.background = 'rgba(15, 20, 25, 0.85)';
+      }
+    });
+  </script>
+</body>
+</html>
