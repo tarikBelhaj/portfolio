@@ -577,20 +577,18 @@ a:hover {
   .nav::before {
     content: '';
     position: fixed;
-    top: 0;
-    left: -100vw;
-    width: 100vw;
-    height: 100vh;
+    inset: 0; /* top, right, bottom, left */
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(8px);
-    transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    z-index: -1;
-    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    z-index: 999;
   }
 
   .nav.active::before {
-    left: 0;
-    pointer-events: auto;
+    opacity: 1;
+    visibility: visible;
   }
 
   .nav ul {
