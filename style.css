@@ -135,6 +135,56 @@ a:hover {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
+/* ================= BOUTON FERMER (X) - NOUVEAU ================= */
+.close-menu {
+  display: none;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  z-index: 1003;
+  padding: 0;
+}
+
+.close-menu:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--primary);
+  color: var(--primary-light);
+  transform: rotate(90deg);
+}
+
+.close-menu svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ================= OVERLAY (fond sombre) - NOUVEAU ================= */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 999;
+}
+
+.nav-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* ================= HERO ================= */
 .hero {
   min-height: 100vh;
@@ -515,7 +565,7 @@ a:hover {
 /* Metrics */
 .metrics-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmin(180px, 1fr));
   gap: 1.5rem;
   margin-bottom: 3rem;
 }
@@ -638,88 +688,82 @@ a:hover {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ================= RESPONSIVE ================= */
-/* ================= MOBILE NAV REWORK ================= */
+/* ================= RESPONSIVE - MODIFICATIONS MOBILE MENU UNIQUEMENT ================= */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: flex; /* visible sur mobile */
+    display: flex;
   }
 
+  /* Afficher l'overlay sur mobile */
+  .nav-overlay {
+    display: block;
+  }
+
+  /* Menu mobile slide depuis la droite */
   .nav {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 80%; /* largeur du menu */
-    max-width: 320px;
+    width: 85%;
+    max-width: 360px;
     height: 100vh;
-    background: rgba(22, 27, 38, 0.95); /* menu opaque pour texte net */
+    background: rgba(22, 27, 38, 0.98);
+    backdrop-filter: blur(20px);
     border-left: 1px solid rgba(99, 102, 241, 0.3);
-    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.3);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 4rem 2rem;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    z-index: 1001; /* au-dessus de l'overlay */
+    padding: 5rem 2rem 2rem;
+    transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 1001;
+    overflow-y: auto;
   }
 
   .nav.active {
     right: 0;
   }
 
-  /* Overlay derrière le menu */
-  .nav::before {
-    content: '';
-    position: fixed;
-    inset: 0; /* couvre tout l'écran */
-    background: rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(6px); /* floute uniquement le fond */
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
-    z-index: 1000; /* sous le menu */
+  /* Afficher le bouton X sur mobile */
+  .close-menu {
+    display: flex;
   }
 
-  .nav.active::before {
-    opacity: 1;
-    visibility: visible;
-  }
-
+  /* Menu links mobile */
   .nav ul {
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 0.5rem;
     width: 100%;
+    margin-bottom: 2rem;
   }
 
   .nav li {
-    text-align: left;
     width: 100%;
   }
 
   .nav a {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
-    padding: 0.8rem 1rem;
+    padding: 1rem 1.25rem;
     display: block;
     border-radius: 0.75rem;
     color: var(--text-primary);
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 0.5rem;
-    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.3s ease;
   }
 
   .nav a:hover {
-    background: rgba(99, 102, 241, 0.2);
+    background: rgba(99, 102, 241, 0.15);
     border-color: rgba(99, 102, 241, 0.4);
     color: var(--primary-light);
-    transform: translateX(8px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.15);
+    transform: translateX(4px);
   }
 
+  /* Language switch mobile */
   .lang-switch {
     font-size: 0.9rem;
-    margin-top: 2rem;
+    margin-top: auto;
     margin-left: 0;
     padding: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -727,16 +771,6 @@ a:hover {
     background: rgba(255, 255, 255, 0.05);
     width: 100%;
     text-align: center;
-    color: var(--text-muted);
-  }
-
-  .lang-switch a {
-    margin-right: 0.5rem;
-    color: var(--text-secondary);
-  }
-
-  .lang-switch a:hover {
-    color: var(--primary-light);
   }
 
   /* CTA et métriques mobiles */
