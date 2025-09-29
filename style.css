@@ -699,23 +699,23 @@ a:hover {
     display: block;
   }
 
-  /* Menu mobile slide depuis la droite - plus élégant */
+  /* Menu mobile slide depuis la droite - ultra épuré */
   .nav {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 82%;
-    max-width: 340px;
+    width: 85%;
+    max-width: 320px;
     height: 100vh;
-    background: rgba(14, 16, 22, 0.97);
-    backdrop-filter: blur(25px);
-    border-left: 1px solid rgba(99, 102, 241, 0.2);
-    box-shadow: -8px 0 32px rgba(0, 0, 0, 0.6);
+    background: rgba(14, 16, 22, 0.98);
+    backdrop-filter: blur(30px);
+    border-left: 1px solid rgba(99, 102, 241, 0.15);
+    box-shadow: -6px 0 24px rgba(0, 0, 0, 0.5);
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 5.5rem 1.75rem 2rem;
-    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 5rem 1.5rem 2rem;
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1001;
     overflow-y: auto;
   }
@@ -729,10 +729,10 @@ a:hover {
     display: flex;
   }
 
-  /* Menu links mobile - design épuré et moderne */
+  /* Menu links mobile - design minimaliste et élégant */
   .nav ul {
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 0.3rem;
     width: 100%;
     margin-bottom: 2rem;
   }
@@ -742,52 +742,54 @@ a:hover {
   }
 
   .nav a {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 500;
     letter-spacing: -0.01em;
-    padding: 0.75rem 1rem;
+    padding: 0.65rem 0.85rem;
     display: block;
-    border-radius: 0.5rem;
-    color: var(--text-primary);
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 0.4rem;
+    color: var(--text-secondary);
+    background: transparent;
+    border: none;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .nav a:hover,
   .nav a:focus {
-    background: rgba(99, 102, 241, 0.12);
-    border-color: rgba(99, 102, 241, 0.35);
-    color: var(--primary-light);
-    transform: translateX(3px);
-    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.15);
+    background: rgba(99, 102, 241, 0.08);
+    color: var(--text-primary);
+    transform: translateX(2px);
   }
 
-  /* Language switch mobile - minimaliste et centré */
+  /* Language switch mobile - ultra minimaliste */
   .lang-switch {
-    font-size: 0.85rem;
-    font-weight: 500;
+    font-size: 0.8rem;
+    font-weight: 400;
     margin-top: auto;
     margin-left: 0;
-    padding: 0.85rem 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 0.5rem;
-    background: rgba(255, 255, 255, 0.03);
+    padding: 0.7rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     width: 100%;
     text-align: center;
     color: var(--text-muted);
-    letter-spacing: 0.02em;
+    letter-spacing: 0.05em;
+    background: transparent;
   }
 
   .lang-switch a {
     color: var(--text-muted);
-    font-weight: 500;
-    padding: 0.25rem 0.5rem;
+    font-weight: 400;
+    padding: 0.2rem 0.4rem;
     transition: color 0.25s ease;
+    background: none;
   }
 
   .lang-switch a:hover {
     color: var(--primary-light);
+    background: none;
   }
 
   /* CTA et métriques mobiles - plus compacts */
